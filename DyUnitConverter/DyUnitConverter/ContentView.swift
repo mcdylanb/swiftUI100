@@ -17,13 +17,26 @@ struct ContentView: View {
         
         var converted:Double {
             var temp = 0.0
+            print("Testing Dylan: \(temp)")
             temp = amountToConvert
+            print("Testing Dylan: \(temp)")
+            print("Testing Dylan: unittoconvert:\(unitToConvert)")
+            print("Testing Dylan: unitconverted:\(unitConverted)")
             if unitToConvert == "meters" && unitConverted == "kilometers"{
+                print("Testing Dylan: inside meters to km")
                 temp = temp / 1000
             }else if unitToConvert == "kilometers" && unitConverted == "meters"{
+                print("Testing Dylan: inside km to m")
                 temp = temp * 1000
+            }else if unitToConvert == "meters" && unitConverted == "feet"{
+                print("Testing Dylan: inside m to ft")
+                temp = temp * 3.28084
+            }else if unitToConvert == "feet" && unitConverted == "meters"{
+                print("Testing Dylan: inside ft to m")
+                temp = temp * 0.3048
             }
-            return temp        }
+            return temp
+        }
         
         
         NavigationStack{
